@@ -1,9 +1,9 @@
 This is the code released for the paper
 # Perssonalized Session-Based Recommendation Using Graph Attention Networks
 accepted by _The annual International Joint Conference on Neural Networks_ IJCNN2021.
-The proposed PSR-GAT model is an attentional Graph Nerual Network on the GAT basis. Their architecuture are similar, with several improvements being introduced. Interested readers may find the description of differences in Section IV-E of the paper.
+The proposed PSR-GAT model is an attentional Graph Nerual Network on the GAT basis. Their architecuture are comparable, with several improvements being introduced. Interested readers may find the description of differences in Section IV-E of the paper.
 
-Our paper get some inspirations from GAT and FGNN, many thanks to the authors.
+Our paper get some inspirations from GAT and FGNN, many thanks to the authors. In the reviewing process, a couple of reviewers questioned that the proposed PSR-GAT is an extention or just inherited verything from another piece of work SR-GNN, becuase of the using of attention mechanism, linear transformation layer etc, and thus doubt the novelty. Well, upon carefully studying SR-GNN, one may notice that although the word "attention" appears in both papers, it refers to utterly different things and functions at different learning stage. The work underpins our study is [GAT](https://arxiv.org/abs/1710.10903) accepted by ICLR2018 and [FGNN](https://dl.acm.org/doi/10.1145/3357384.3358010), while the work underpins SR-GNN is [Gate-GNN](https://arxiv.org/abs/1511.05493) accepted by ICLR2016. Even the fundermental theories are different. Interested readers can refer to the links provides above.
 
 ## Datasets
 - _SYNC Screen_ is not released to public because we have confidential protocal with the data contributors.
