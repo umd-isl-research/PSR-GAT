@@ -24,7 +24,7 @@ Our paper gets some inspirations from GAT and FGNN, many thanks to the authors. 
 ## About the codes
 - data_processing.py: build graphs from sessions
 - custermized_gcn_layers.py: the custermized layer with our designed messange propagation rules, used by the PSR-GAT model as the attentional layers. The two Graph Convolutional classes provided are exactly the same, compitable with different Pytorch-Geometric versions.
-- model_build.py: build the the PSR-GAT model architecture.
+- model_build.py: build the the PSR-GAT model. It provides all the details of the architecture of the PSR-GAT described in our paper.
 - util.py:  helpful variables and functions
 - GNN_run: scripts for training and evaluating, the top file for running the experiments
 
