@@ -28,4 +28,6 @@ Our paper gets some inspirations from GAT and FGNN, many thanks to the authors. 
 - util.py:  helpful variables and functions
 - GNN_run: scripts for training and evaluating, the top file for running the experiments
 
+We may continue to update this repository.
+
 If you find it useful, please cite our paper "Personalized Session-Based Recommendation Using Graph Attention Networks".
