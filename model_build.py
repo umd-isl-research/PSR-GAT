@@ -13,19 +13,6 @@ def save_model(net, filename):
     torch.save(net.state_dict(), filename)
     print("save model to: {}".format(filename))
 
-def onehot_to_label(onehot):
-    return np.argmax(a=onehot, axis=1)
-
-def onehot_encoder(labels, n_class=2):
-    """ One-hot encoding """
-    # input labels must be in 0 ~ n_class-1
-    expansion = np.eye(n_class)
-    labels = np.array(np.around(labels), dtype=np.int32)
-    y = expansion[:, labels].T
-    #y = expansion[:, labels.astype(np.int32)].T
-    assert y.shape[1] == n_class, "Wrong number of labels!"
-    return y
-
 def init_weights(layer):
     """Init weights for layers w.r.t. the original paper."""
     layer_name = layer.__class__.__name__
@@ -45,16 +32,6 @@ def zero_weights(layer):
         nn.init.constant_(layer.weight, 0.0)
 
 
-def FedAvg(weights, ratio):
-    out = dict()
-    for w, r in zip(weights, ratio):
-        for key in w:
-            if key in out:
-                out[key] += w[key]*r
-            else:
-                out[key] = w[key]*r
-    return out
-
 def get_batches(data_set, batch_size=64, shuffer=False):
     if shuffer:
         ind = np.random.permutation(len(data_set))
@@ -66,7 +43,7 @@ def get_batches(data_set, batch_size=64, shuffer=False):
 
 
 embed_dim = 64
-class PSR_GAT(torch.nn.Module):  # this mode use the returned weight aplha from PrefGATConv as the new weight for the next conv layer
+class PSR_GAT(torch.nn.Module): 
     def __init__(self, num_items=239, head=1, use_multista=True): #239 in batch1, 231 in batch2, without counting default screens
         super(PSR_GAT, self).__init__()
         self.num_items = num_items
@@ -81,8 +58,6 @@ class PSR_GAT(torch.nn.Module):  # this mode use the returned weight aplha from 
         self.act1 = torch.nn.LeakyReLU()
         self.act2 = torch.nn.LeakyReLU()
 
-        # self.gp = Set2Set(in_channels=64, processing_steps=5) # pgy built in LSTM realization
-        # self.gp = GRUSet2Set(in_channels=64, processing_steps=5) # in original paper, FGCNN use GRU in set2set
         self.gp = Set2Set_GRU(in_channels=64, processing_steps=5)  # my realization using GRU
         self.lin3 = torch.nn.Linear(64*2+1, 64)
         if use_multista:
@@ -131,4 +106,4 @@ class PSR_GAT(torch.nn.Module):  # this mode use the returned weight aplha from 
 
 
 if __name__ == "__main__":
-    print("debug")
+    pass
