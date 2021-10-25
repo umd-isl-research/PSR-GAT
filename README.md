@@ -30,7 +30,7 @@ Our paper gets some inspirations from GAT and FGNN, many thanks to the authors. 
 
 We may continue to update this repository.
 
-If you find it useful, please cite our paper:
+If you find it useful, please cite our paper:\
 @inproceedings{xie2021personalized,\
   title={Personalized Session-Based Recommendation Using Graph Attention Networks},\
   author={Xie, Yongquan and Li, Zhengru and Qin, Tian and Tseng, Finn and Johannes, Kristinsson and Qiu, Shiqi and Murphey, Yi Lu},\
