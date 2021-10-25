@@ -19,7 +19,7 @@ Our paper gets some inspirations from GAT and FGNN, many thanks to the authors. 
 - readers can go to [FGNN](https://github.com/RuihongQiu/FGNN) for the implementation of FGNN.
 - Readers can go to [SR-GNN](https://github.com/CRIPAC-DIG/SR-GNN) for the implementation of SR-GNN.
 - Readers can go to [Caser](https://github.com/graytowne/caser_pytorch) for the implementation of Caser.
-- Readers can go to the [Pytorch-Gemetric document](https://pytorch-geometric.readthedocs.io/en/latest/modules/nn.html) for other implementing information
+- Readers can go to the [Pytorch-Gemetric document](https://pytorch-geometric.readthedocs.io/en/latest/modules/nn.html) for some implementing information
 
 ## About the codes
 - data_processing.py: build graphs from sessions
